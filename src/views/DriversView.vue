@@ -6,33 +6,13 @@ import Pagination from '@/components/Pagination.vue'
 import { driversStore } from '@/_stores/driversStore'
 import { storeToRefs } from 'pinia'
 
-const currentPage = ref(1) // pageable.pageNumber
-const totalItems = ref(0) // totalElements
-const totalPages = ref(0) // totalPages
-const items = ref([]) // content
 const pageSize = ref(10) // pageable.pageSize
 
 const store = driversStore()
 const { content, pagination, sort } = storeToRefs(store)
 
-const updateCurrentPage = (page) => {
-  currentPage.value = page
-}
-
 const updatePageSize = (event) => {
   pageSize.value = parseInt(event.target.value)
-}
-
-const updateTotalPages = (pages) => {
-  totalPages.value = pages
-}
-
-const updateItems = (content) => {
-  items.value = content
-}
-
-const updateTotalItems = (cantItems) => {
-  totalItems.value = cantItems
 }
 
 const formatDate = (date) => {
@@ -59,6 +39,7 @@ function changePage(page) {
     </div>
     <div class="divider"></div>
     <div class="p-3">
+      <!-- Controles de la tabla -->
       <div class="dw-table-controls d-flex align-items-center gap-2">
         <select @change="updatePageSize" id="itemsPerPage" class="py-1 px-1">
           <option value="10">10</option>
@@ -67,7 +48,6 @@ function changePage(page) {
         </select>
         <label for="itemsPerPage">Por página</label>
         <input type="text" placeholder="Buscar..." class="search-input ms-auto px-2" />
-        <Pagination :pagination="pagination" @change-page="changePage" />
       </div>
     </div>
     <div class="divider"></div>
@@ -90,6 +70,8 @@ function changePage(page) {
         <td class="p-3">{{ formatDate(item.fechaCaducidad) }}</td>
       </template>
     </DwTable>
-    <div class="d-flex justify-content-between align-items-start px-3 pb-3"></div>
+    <div class="px-3 pb-3">
+      <Pagination :pagination="pagination" @change-page="changePage" />
+    </div>
   </div>
 </template>

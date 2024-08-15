@@ -1,12 +1,12 @@
 <script setup>
-import { defineProps, defineEmits, ref } from 'vue'
+import { defineProps, defineEmits} from 'vue'
 
 const props = defineProps({
   pagination: {
     type: Object,
     default() {
       return {
-        last: true,
+        last: false,
         totalPages: 1,
         totalElements: 1,
         first: true,
@@ -24,6 +24,7 @@ const PAGES_TO_SHOW = 5
 function changePage(page) {
   emits('changePage', page)
 }
+
 const getPagesToShow = () => {
   // Si el total de páginas es menor a 5, muestra todas las páginas sino solo muestra 5
   const pageRange =
@@ -44,10 +45,10 @@ const getPageStyles = (page) => {
 </script>
 
 <template>
-  <div>
-    <span
+  <div class="d-flex">
+    <span class="me-auto"
       >De {{ pagination.number * pagination.size + 1 }} a
-      {{ Math.min(pagination.number * pagination.size + 1, pagination.totalElements) }} de
+      {{ Math.min((pagination.number + 1) * pagination.size, pagination.totalElements) }} de
       {{ pagination.totalElements }} registros</span
     >
     <nav aria-label="Page navigation">
@@ -105,7 +106,7 @@ const getPageStyles = (page) => {
         <li class="page-item">
           <button
             class="page-link"
-            @click="changePage(totalPages)"
+            @click="changePage(pagination.totalPages - 1)"
             :disabled="pagination.last"
             style="border: none; border-radius: 50%; color: #333"
           >
