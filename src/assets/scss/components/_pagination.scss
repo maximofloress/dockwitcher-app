@@ -1,0 +1,11 @@
+.page-link:hover {
+  background-color: rgb(246, 55, 93);
+  color: #fff;
+}
+
+/* Estilos para botones activos */
+.page-link:active {
+  border-color: transparent;
+  background-color: rgb(246, 55, 93);
+  color: #fff;
+}

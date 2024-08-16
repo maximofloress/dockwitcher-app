@@ -1,30 +1,23 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 
 import HeaderBar from './components/HeaderBar.vue'
 import Sidebar from '@/components/Sidebar.vue'
-import NavigationBar from './components/NavigationBar.vue';
+import NavigationBar from './components/NavigationBar.vue'
+
+
 </script>
 
 <template>
-  <!-- <div class="d-flex">
-    <sidebar></sidebar>
-    <div class="w-100">
-      <header-bar></header-bar>
+  <Sidebar />
+  <div class="w-100">
+    <div class="headers w-100">
+      <HeaderBar />
+      <div class="line"></div>
+      <NavigationBar />
     </div>
-    <RouterView />
-  </div> -->
-  <main>
-    <div class="app-container">
-      <Sidebar />
-      <div class="headers">
-        <HeaderBar />
-        <div class="line"></div>
-        <NavigationBar />
-      </div>
-      <body>
-        
-      </body>
+    <div class="workarea mx-4">
+      <RouterView />
     </div>
-  </main>
+  </div>
 </template>

@@ -1,24 +1,22 @@
 .app-container {
-    display: flex;
-    padding-left: 230px;
-    width: 100%;
 }
 
 .line {
-    border-bottom: .5px solid rgb(238, 114, 114);
+  border-bottom: 0.5px solid rgb(238, 114, 114);
 }
 
 body {
-    background-color: whitesmoke;
-    color: whitesmoke;
-    width: 100%;
+  background-color: whitesmoke;
+  color: whitesmoke;
+  width: 100%;
 }
 
 .headers {
-    height: 300px;
-    position: fixed;
-    top: 0;
-    left: 230px;
-    width: calc(100% - 230px);
+  // height: 300px;
+}
+
+.workarea{
+  color: #525f7fdc;
+  margin-top: -60px;
 }
 

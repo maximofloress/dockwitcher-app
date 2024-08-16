@@ -1,0 +1,31 @@
+/* Eliminar transiciones en botones */
+.btn {
+    transition: none !important;
+  
+    /* Eliminar efectos de hover */
+    &:hover,
+    &:focus {
+    background-color: $background !important;
+    color: $secondary !important;
+    box-shadow: none !important;
+    }
+    
+    /* Eliminar efectos de active */
+    &:active,
+    &:focus:active,
+    &.active,
+    &:focus.active {
+    background-color: $background !important;
+    color: $secondary !important;
+    box-shadow: none !important;
+    }
+    
+    /* Eliminar outline al hacer click */
+    // &:focus {
+    // outline: none !important;
+    // box-shadow: none !important;
+    // }
+}
+
+
+  

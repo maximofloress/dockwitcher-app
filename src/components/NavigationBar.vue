@@ -3,16 +3,15 @@
 </script>
 
 <template>
-  <nav class="navbar">
-    <ul>
-      <li>
-        <span class="nav-title">Recepciones</span>
+  <nav class="navigation-bar d-flex align-items-start">
+    <ul class="w-100 px-4 mt-2 d-flex justify-content-between">
+      <li class="d-flex align-items-center">
+        <span class="me-4 fs-5 fw-medium">Recepciones</span>
         <img src="../assets/images/icons8-home-24.png" width="20px">
-        <span>- Planificación</span><span class="enabled">- Recepciones</span>
+        <span class="ms-1 fs-5 fw-medium">- Planificación</span><span class="enabled ms-1 fs-5 fw-medium">- Recepciones</span>
       </li>
       <li>
-        <button class="button">Nuevo</button>
-        <button class="button">Importar</button>
+        <button class="btn btn-navigation-bar">Importar</button>
       </li>
     </ul>
   </nav>

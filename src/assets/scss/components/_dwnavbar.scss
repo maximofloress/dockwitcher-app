@@ -1,0 +1,22 @@
+.navigation-bar {
+    background-color: $primary;
+    height: 150px;
+}
+
+.btn-navigation-bar {
+    border: none;
+    border-radius: 5px;
+    width: 90px;
+    color: $secondary;
+    // background-color: $background; <-- variable para el fondo
+    background-color: white;
+}
+
+.navigation-bar ul {
+    list-style: none;
+}
+
+.enabled {
+    color: rgba(245, 245, 245, 0.597)
+}
+
