@@ -5,7 +5,7 @@ export const driversStore = defineStore('drivers', {
   state: () => ({
     content: [],
     pagination: {
-      last: true,
+      last: false,
       totalPages: 1,
       totalElements: 1,
       first: true,

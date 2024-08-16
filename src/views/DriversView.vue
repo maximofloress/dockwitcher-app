@@ -13,6 +13,7 @@ const { content, pagination, sort } = storeToRefs(store)
 
 const updatePageSize = (event) => {
   pageSize.value = parseInt(event.target.value)
+  changePage(0)
 }
 
 const formatDate = (date) => {
@@ -28,7 +29,7 @@ onMounted(() => {
 })
 
 function changePage(page) {
-  store.getDrivers(page, 10, 'nombre', 'asc');
+  store.getDrivers(page, pageSize.value, 'nombre', 'asc');
 }
 </script>
 

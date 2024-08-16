@@ -19,16 +19,13 @@ const props = defineProps({
 
 const emits = defineEmits(['changePage'])
 
-const PAGES_TO_SHOW = 5
-
 function changePage(page) {
   emits('changePage', page)
 }
 
 const getPagesToShow = () => {
   // Si el total de páginas es menor a 5, muestra todas las páginas sino solo muestra 5
-  const pageRange =
-    props.pagination.totalPages < PAGES_TO_SHOW ? props.pagination.totalPages : PAGES_TO_SHOW
+  const pageRange = props.pagination.totalPages < 5 ? props.pagination.totalPages : 5
   const startPage = Math.max(
     1,
     Math.min(props.pagination.number + 1, props.pagination.totalPages - pageRange + 1)
